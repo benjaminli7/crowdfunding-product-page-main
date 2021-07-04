@@ -38,7 +38,7 @@ p {
   display: flex;
 }
 
-.overlay {
+.overlay-menu {
   position: fixed;
   top: 0;
   left: 0;
@@ -129,7 +129,7 @@ main {
   border-radius: 30px;
   font-weight: 700;
   letter-spacing: 1px;
-  padding: 15px 30px;
+  padding: 15px 40px;
   font-size: 0.9rem;
 }
 
@@ -137,11 +137,12 @@ main {
   position: relative;
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (max-width: 1023px) {
   #hero {
-    background: url("../../../images/image-hero-mobile.jpg");
-    background-repeat: no-repeat;
-    background-size: contain;
+    background: url("../../../images/image-hero-mobile.jpg"), -webkit-gradient(linear, left top, left bottom, from(black), to(transparent));
+    background: url("../../../images/image-hero-mobile.jpg"), linear-gradient(black, transparent);
+    background-repeat: no-repeat, no-repeat;
+    background-size: contain, 100%;
     width: 100%;
     height: 0;
     padding-top: 80%;
@@ -157,6 +158,15 @@ main {
     height: 0;
     padding-top: 27.77%;
   }
+}
+
+#hero .overlay {
+  position: fixed;
+  top: 0;
+  height: 100px;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(black), to(transparent));
+  background: linear-gradient(black, transparent);
 }
 
 #nav-header {
@@ -316,10 +326,10 @@ main {
 
 @media screen and (min-width: 1024px) {
   #crowdfunding-stats .flex hr:nth-of-type(1) {
-    margin: 0px 45px;
+    margin: 0px 7%;
   }
   #crowdfunding-stats .flex hr:nth-of-type(2) {
-    margin: 0px 45px 0px 90px;
+    margin: 0px 45px 0px 10%;
   }
   #crowdfunding-stats span {
     margin-bottom: 10px;
@@ -357,12 +367,46 @@ main {
 #about-this-project .reward-item {
   border: 1px solid #dbdbdb;
   border-radius: 5px;
+  padding: 25px 22px;
+  margin-bottom: 20px;
 }
 
 #about-this-project .reward-item span {
   font-size: 2rem;
   font-weight: 700;
   color: black;
+}
+
+#about-this-project .reward-item sub {
+  color: #3cb4ac;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+#about-this-project .reward-item h1 {
+  margin-bottom: 7px;
+}
+
+#about-this-project .reward-item p {
+  margin: 15px 0 20px 0;
+}
+
+#about-this-project .reward-item .flex p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+}
+
+#about-this-project .reward-item .flex p span {
+  margin-right: 10px;
+}
+
+#about-this-project .out-of-stock {
+  opacity: 0.5;
 }
 
 @media screen and (max-width: 1023px) {
@@ -376,24 +420,10 @@ main {
   #about-this-project #about-intro p {
     margin: 20px 0;
   }
-  #about-this-project #rewards .reward-item {
-    padding: 25px 22px;
-    margin-bottom: 20px;
-  }
-  #about-this-project #rewards .reward-item h1, #about-this-project #rewards .reward-item sub {
+  #about-this-project .reward-item h1 {
     font-size: 0.95rem;
   }
-  #about-this-project #rewards .reward-item h1 {
-    margin-bottom: 7px;
-  }
-  #about-this-project #rewards .reward-item sub {
-    color: #3cb4ac;
-    font-weight: 500;
-  }
-  #about-this-project #rewards .reward-item p {
-    margin: 15px 0 20px 0;
-  }
-  #about-this-project #rewards .reward-item .flex {
+  #about-this-project .reward-item .flex {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -402,20 +432,29 @@ main {
         -ms-flex-align: start;
             align-items: flex-start;
   }
-  #about-this-project #rewards .reward-item .flex p {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+}
+
+@media screen and (min-width: 1024px) {
+  #about-this-project p {
+    font-size: 1rem;
+    line-height: 1.85rem;
+  }
+  #about-this-project #about-intro h1 {
+    font-size: 1.3rem;
+  }
+  #about-this-project #about-intro p {
+    margin: 30px 0;
+  }
+  #about-this-project .reward-item h1 {
+    font-size: 1.2rem;
+  }
+  #about-this-project .reward-item .flex {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin-bottom: 30px;
-  }
-  #about-this-project #rewards .reward-item .flex p span {
-    margin-right: 10px;
-  }
-  #about-this-project #rewards .out-of-stock {
-    opacity: 0.5;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 /*# sourceMappingURL=main.css.map */

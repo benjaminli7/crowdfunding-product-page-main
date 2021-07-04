@@ -11,14 +11,16 @@ hamburger.onclick = () => {
     hamburger.style.display = "none";
     close_menu.style.display = "block";
     nav_menu.style.display = "block";
-    wrapper.classList.add("overlay");
+    wrapper.classList.remove("overlay")
+    wrapper.classList.add("overlay-menu");
 }
 
 close_menu.onclick = () => {
     hamburger.style.display = "block";
     close_menu.style.display = "none";
     nav_menu.style.display = "none";
-    wrapper.classList.remove("overlay");
+    wrapper.classList.remove("overlay-menu");
+    wrapper.classList.add("overlay");
 }
 
 
