@@ -9,16 +9,19 @@ html, body {
 }
 
 body {
-    ul {
-        list-style-type: none;
-    }   
-
-    a {
-        text-decoration: none;
-    }
     font-size: $font-size;
     font-family: $commissioner;
+}
 
+ul {
+    list-style-type: none;
+}   
+
+a {
+    text-decoration: none;
+}
+p {
+    color: $dark-gray
 }
 
 .preload * {
@@ -54,17 +57,14 @@ main {
     border-radius: 10px;
     margin: 0 auto;
     margin-bottom: 20px;
-    @include media-min("phone") {
-        padding-top: 50px;
-        padding-left: 25px;
-        padding-right: 25px;
+    @include media-max("desktop") {
+        padding: 35px 25px;
         width: 90%;
     }
 
     @include media-min("desktop") {
         width: 51%;
-        padding-left: 50px;
-        padding-right: 50px;
+        padding: 45px 50px;
     }
 }
 

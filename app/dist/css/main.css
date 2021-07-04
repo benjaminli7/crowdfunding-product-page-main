@@ -15,12 +15,16 @@ body {
   font-family: "Commissioner", sans-serif;
 }
 
-body ul {
+ul {
   list-style-type: none;
 }
 
-body a {
+a {
   text-decoration: none;
+}
+
+p {
+  color: #7a7a7a;
 }
 
 .preload * {
@@ -58,11 +62,9 @@ main {
   margin-bottom: 20px;
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (max-width: 1023px) {
   .box {
-    padding-top: 50px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding: 35px 25px;
     width: 90%;
   }
 }
@@ -70,8 +72,7 @@ main {
 @media screen and (min-width: 1024px) {
   .box {
     width: 51%;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 45px 50px;
   }
 }
 
@@ -115,6 +116,21 @@ main {
     padding: 20px 25px 20px 15px;
     color: #7a7a7a;
   }
+}
+
+.select-reward-btn {
+  padding: 15px 30px;
+  font-size: 0.9rem;
+}
+
+.out-of-stock-btn {
+  background-color: grey;
+  color: white;
+  border-radius: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 15px 30px;
+  font-size: 0.9rem;
 }
 
 #hero {
@@ -222,7 +238,6 @@ main {
 }
 
 #mastercraft-section p {
-  color: #7a7a7a;
   line-height: 1.4rem;
 }
 
@@ -267,6 +282,140 @@ main {
   }
   #mastercraft-section p {
     padding-bottom: 35px;
+  }
+}
+
+#crowdfunding-stats #progressbar {
+  width: 100%;
+  background-color: #f4f4f4;
+  border-radius: 30px;
+  margin-top: 30px;
+}
+
+#crowdfunding-stats #progressbar #progress {
+  height: 13px;
+  border-radius: 30px;
+}
+
+#crowdfunding-stats #progressbar #progress {
+  width: 80%;
+  background-color: #3cb4ac;
+}
+
+#crowdfunding-stats span {
+  display: block;
+  font-weight: 700;
+  font-size: 2rem;
+  color: black;
+}
+
+#crowdfunding-stats hr {
+  border-left: 1px solid white;
+  border-top: 0px;
+}
+
+@media screen and (min-width: 1024px) {
+  #crowdfunding-stats .flex hr:nth-of-type(1) {
+    margin: 0px 45px;
+  }
+  #crowdfunding-stats .flex hr:nth-of-type(2) {
+    margin: 0px 45px 0px 90px;
+  }
+  #crowdfunding-stats span {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  #crowdfunding-stats .flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #crowdfunding-stats .flex p {
+    font-size: 0.9rem;
+  }
+  #crowdfunding-stats .flex span {
+    margin-bottom: 10px;
+  }
+  #crowdfunding-stats .flex hr {
+    width: 30%;
+    margin-top: 22px;
+    margin-bottom: 20px;
+  }
+}
+
+#about-this-project #about-intro {
+  margin-bottom: 30px;
+}
+
+#about-this-project .reward-item {
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+}
+
+#about-this-project .reward-item span {
+  font-size: 2rem;
+  font-weight: 700;
+  color: black;
+}
+
+@media screen and (max-width: 1023px) {
+  #about-this-project p {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+  }
+  #about-this-project #about-intro h1 {
+    font-size: 1.2rem;
+  }
+  #about-this-project #about-intro p {
+    margin: 20px 0;
+  }
+  #about-this-project #rewards .reward-item {
+    padding: 25px 22px;
+    margin-bottom: 20px;
+  }
+  #about-this-project #rewards .reward-item h1, #about-this-project #rewards .reward-item sub {
+    font-size: 0.95rem;
+  }
+  #about-this-project #rewards .reward-item h1 {
+    margin-bottom: 7px;
+  }
+  #about-this-project #rewards .reward-item sub {
+    color: #3cb4ac;
+    font-weight: 500;
+  }
+  #about-this-project #rewards .reward-item p {
+    margin: 15px 0 20px 0;
+  }
+  #about-this-project #rewards .reward-item .flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  #about-this-project #rewards .reward-item .flex p {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 30px;
+  }
+  #about-this-project #rewards .reward-item .flex p span {
+    margin-right: 10px;
+  }
+  #about-this-project #rewards .out-of-stock {
+    opacity: 0.5;
   }
 }
 /*# sourceMappingURL=main.css.map */
