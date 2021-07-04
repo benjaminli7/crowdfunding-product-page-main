@@ -93,7 +93,7 @@ main {
 
 @media screen and (min-width: 1024px) {
   .hide-for-desktop {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -237,6 +237,17 @@ main {
   #nav-header #nav-menu .underline {
     border-top: 1px solid white;
   }
+  #nav-header #nav-menu .overlay-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(black), to(transparent));
+    background: linear-gradient(black, transparent);
+    height: 100vh;
+    z-index: 1;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -250,9 +261,9 @@ main {
             justify-content: space-between;
   }
   #nav-header #nav-menu {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
   }
   #nav-header #nav-menu li:not(:first-child) {
     margin-left: 35px;

@@ -79,13 +79,13 @@ main {
 
 .hide-for-mobile {
     @include media-max("desktop") {
-        display: none;
+        display: none ;
     }
 }
 
 .hide-for-desktop {
     @include media-min("desktop") {
-        display: none;
+        display: none !important;
     }
 }
 

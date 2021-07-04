@@ -27,6 +27,16 @@
             .underline {
                 border-top: 1px solid white;
             }
+            .overlay-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background: linear-gradient($black, transparent);
+                height: 100vh;
+                z-index: 1;
+            }
         }
     }
 
@@ -35,7 +45,7 @@
         display: flex;
         justify-content: space-between;
         #nav-menu {
-            display: flex;
+            display: flex !important;
             li {
                 &:not(:first-child){
                     margin-left: 35px;
