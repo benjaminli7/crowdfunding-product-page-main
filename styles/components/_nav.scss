@@ -1,0 +1,53 @@
+#nav-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    .flex {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    @include media-max("desktop") {
+        padding: 30px 25px;
+        #nav-menu {
+            background-color: white;
+            border-radius: 5px;
+            margin: 40px auto;
+            li {
+                position: relative;
+                padding: 20px;
+                a {
+                    color: $black;
+                    font-weight: 500;
+                    font-size: 1.2rem;
+                }
+            }
+            .underline {
+                border-top: 1px solid white;
+            }
+        }
+    }
+
+    @include media-min("desktop") {
+        padding: 40px 170px;
+        display: flex;
+        justify-content: space-between;
+        #nav-menu {
+            display: flex;
+            li {
+                &:not(:first-child){
+                    margin-left: 35px;
+                }
+
+                a {
+                    color: white;
+                    font-weight: 400;
+                    font-size: 0.8rem;
+                    
+                }
+            }
+        }
+    }
+}

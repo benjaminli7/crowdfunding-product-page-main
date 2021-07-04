@@ -1,0 +1,26 @@
+.green-btn {
+    background-color: $moderate-cyan;
+    color: white;
+    border-radius:30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.back-this-project-btn {
+    padding: 19px 40px;
+}
+
+#bookmark-btn {
+    @include media-min("desktop") {
+        display: flex;
+        align-items: center;
+        background-color:rgb(244,244,244);
+        border-radius: 30px;
+        span {
+            font-weight: 700;
+            padding: 20px 25px 20px 15px;
+            color: $dark-gray;
+        }
+    }
+}
+

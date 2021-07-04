@@ -1,0 +1,20 @@
+#hero {
+    position: relative;
+    @include media-min("phone") {
+        background: url('../../../images/image-hero-mobile.jpg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 100%;
+        height:0;
+        padding-top: 80%;
+    }
+    
+    @include media-min("desktop") {
+        background: url('../../../images/image-hero-desktop.jpg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 100%;
+        height: 0;
+        padding-top:27.77%;
+    }
+}

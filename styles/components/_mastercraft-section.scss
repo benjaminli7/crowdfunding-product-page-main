@@ -1,0 +1,52 @@
+#mastercraft-section {
+    position: relative;
+    padding-bottom: 40px;
+    text-align: center;
+    #logo {
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%); 
+    }
+
+    p {
+        color: $dark-gray;
+        line-height: 1.4rem;
+    }
+
+    .flex {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    h1 {
+        padding-bottom: 15px;
+    }
+
+    @include media-max("desktop") {
+        margin-top: -55px;
+        font-size: 0.9rem;
+        p {
+            padding-bottom: 20px;
+        }
+        #bookmark-btn span {
+            display: none;
+        }
+        #change-word:before {
+            content: 'beautifully handcrafted'
+        }
+    }
+
+    @include media-min("desktop") {
+        margin-top: -90px;
+        #change-word:before {
+            content: 'beautiful & handcrafted'
+        }
+        h1 {
+            font-size: 1.8rem;
+        }
+        p {
+            padding-bottom: 35px;
+        }
+    }
+}
