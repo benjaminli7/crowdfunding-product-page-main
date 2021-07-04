@@ -40,11 +40,13 @@
                 &:not(:first-child){
                     margin-left: 35px;
                 }
-
                 a {
                     color: white;
                     font-weight: 400;
                     font-size: 0.8rem;
+                    &:hover {
+                        text-decoration: underline;
+                    }
                 }
             }
         }

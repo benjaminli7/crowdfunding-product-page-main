@@ -19,10 +19,11 @@
     }
 
     .overlay {
-        position: fixed;
+        position: absolute;
         top: 0;
         height: 100px;
         width: 100%;
         background: linear-gradient($black, transparent);
+        z-index: 1;
     }
 }

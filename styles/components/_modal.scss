@@ -1,0 +1,134 @@
+#selection-modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    .modal-reward-item {
+        border: 1px solid rgb(219,219,219);
+        border-radius: 10px;
+        margin-bottom: 25px;    
+    }
+
+    .modal-content {
+        position: relative;
+        background-color: white;
+        border-radius: 10px;
+    }
+    .bold {
+        font-size: 1.2rem;
+        margin-right: 10px;
+    }
+
+    @include media-max("desktop") {
+        // mobile
+        .radio {
+            float: left;
+        }
+        .modal-reward-item {
+            padding: 25px 18px;
+            h1, sub {
+                font-size: 0.9rem;
+            }
+            p {
+                font-size: 0.9rem;
+                line-height: 1.6rem;
+                &:nth-of-type(2) {
+                    margin-bottom: 25px;
+                }
+            }
+            .modal-reward-item-header {
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+        }
+        .modal-content {
+            width: 86.5%;   
+            margin: 120px auto;
+            padding: 30px 25px;
+            > h1 {
+                font-size: 1.2rem;
+                margin-bottom: 25px;
+            }
+            > p {
+                font-size: 0.85rem;
+                line-height: 1.5rem;
+                margin-bottom: 20px;
+            }
+            #close-modal {
+                position: absolute;
+                top: 35px;
+                right: 20px;
+            }
+        }
+    }
+    @include media-min("desktop") {
+        // desktop
+
+        .modal-reward-item {
+            padding-right: 15px;
+        }
+        .modal-content {
+            width: 51%;
+            margin: 12.75% auto;
+            padding: 50px;
+            > h1 {
+                font-size: 1.5rem;
+            }
+            > p {
+                margin: 20px 0;
+                font-size: 1rem;
+            }
+            #close-modal {
+                position: absolute;
+                top: 33px;
+                right: 35px;
+            }
+        }
+        .modal-reward-item-header {
+            h1, sub {
+                font-size: 1.1rem;
+            }
+            h1 {
+                margin-right: 15px;
+            }
+            div {
+                display: flex;
+            }
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: [col1] 8% [col2] 70% [col3] 20%;
+            grid-template-rows: [row1] 56px [row2] 100px;
+            .radio {
+                grid-column-start: 1;
+                grid-row-start: 1;
+                justify-self: center;
+                align-self:center
+            }
+            .hide-for-mobile{
+               grid-column-start : 3;
+               grid-row-start: 1;
+               justify-self: right;
+               align-self:center;
+            } 
+            .modal-reward-item-header {
+                grid-column-start: 2;
+                grid-row-start: 1;
+               align-self:center;
+
+            }
+            .modal-reward-text {
+                grid-column-start: 2;
+                grid-column-end: 4;
+                grid-row-start: 2;
+                line-height: 1.8rem;
+            }
+        }
+    }
+}

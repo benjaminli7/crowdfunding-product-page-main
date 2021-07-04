@@ -54,6 +54,15 @@ main {
   background-color: #fafafa;
 }
 
+.bold {
+  font-weight: 700;
+  color: black;
+}
+
+.out-of-stock {
+  opacity: 0.5;
+}
+
 .box {
   background-color: white;
   border: 1px solid #f6f1ee;
@@ -88,16 +97,33 @@ main {
   }
 }
 
+.pledge {
+  color: #3cb4ac;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
 .green-btn {
   background-color: #3cb4ac;
   color: white;
   border-radius: 30px;
   font-weight: 700;
   letter-spacing: 1px;
+  -webkit-transition: background-color 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out;
 }
 
-.back-this-project-btn {
+.green-btn:hover {
+  background-color: #147b74;
+}
+
+#back-this-project-btn {
   padding: 19px 40px;
+}
+
+#bookmark-btn {
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
 }
 
 @media screen and (min-width: 1024px) {
@@ -116,6 +142,10 @@ main {
     padding: 20px 25px 20px 15px;
     color: #7a7a7a;
   }
+}
+
+#bookmark-btn:hover {
+  opacity: 0.8;
 }
 
 .select-reward-btn {
@@ -161,12 +191,13 @@ main {
 }
 
 #hero .overlay {
-  position: fixed;
+  position: absolute;
   top: 0;
   height: 100px;
   width: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(black), to(transparent));
   background: linear-gradient(black, transparent);
+  z-index: 1;
 }
 
 #nav-header {
@@ -230,6 +261,9 @@ main {
     color: white;
     font-weight: 400;
     font-size: 0.8rem;
+  }
+  #nav-header #nav-menu li a:hover {
+    text-decoration: underline;
   }
 }
 
@@ -312,11 +346,9 @@ main {
   background-color: #3cb4ac;
 }
 
-#crowdfunding-stats span {
+#crowdfunding-stats .bold {
   display: block;
-  font-weight: 700;
   font-size: 2rem;
-  color: black;
 }
 
 #crowdfunding-stats hr {
@@ -373,14 +405,6 @@ main {
 
 #about-this-project .reward-item span {
   font-size: 2rem;
-  font-weight: 700;
-  color: black;
-}
-
-#about-this-project .reward-item sub {
-  color: #3cb4ac;
-  font-weight: 500;
-  font-size: 0.95rem;
 }
 
 #about-this-project .reward-item h1 {
@@ -403,10 +427,6 @@ main {
 
 #about-this-project .reward-item .flex p span {
   margin-right: 10px;
-}
-
-#about-this-project .out-of-stock {
-  opacity: 0.5;
 }
 
 @media screen and (max-width: 1023px) {
@@ -455,6 +475,163 @@ main {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+  }
+}
+
+#selection-modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#selection-modal .modal-reward-item {
+  border: 1px solid #dbdbdb;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+#selection-modal .modal-content {
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#selection-modal .bold {
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 1023px) {
+  #selection-modal .radio {
+    float: left;
+  }
+  #selection-modal .modal-reward-item {
+    padding: 25px 18px;
+  }
+  #selection-modal .modal-reward-item h1, #selection-modal .modal-reward-item sub {
+    font-size: 0.9rem;
+  }
+  #selection-modal .modal-reward-item p {
+    font-size: 0.9rem;
+    line-height: 1.6rem;
+  }
+  #selection-modal .modal-reward-item p:nth-of-type(2) {
+    margin-bottom: 25px;
+  }
+  #selection-modal .modal-reward-item .modal-reward-item-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 20px;
+  }
+  #selection-modal .modal-content {
+    width: 86.5%;
+    margin: 120px auto;
+    padding: 30px 25px;
+  }
+  #selection-modal .modal-content > h1 {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+  }
+  #selection-modal .modal-content > p {
+    font-size: 0.85rem;
+    line-height: 1.5rem;
+    margin-bottom: 20px;
+  }
+  #selection-modal .modal-content #close-modal {
+    position: absolute;
+    top: 35px;
+    right: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #selection-modal .modal-reward-item {
+    padding-right: 15px;
+  }
+  #selection-modal .modal-content {
+    width: 51%;
+    margin: 12.75% auto;
+    padding: 50px;
+  }
+  #selection-modal .modal-content > h1 {
+    font-size: 1.5rem;
+  }
+  #selection-modal .modal-content > p {
+    margin: 20px 0;
+    font-size: 1rem;
+  }
+  #selection-modal .modal-content #close-modal {
+    position: absolute;
+    top: 33px;
+    right: 35px;
+  }
+  #selection-modal .modal-reward-item-header h1, #selection-modal .modal-reward-item-header sub {
+    font-size: 1.1rem;
+  }
+  #selection-modal .modal-reward-item-header h1 {
+    margin-right: 15px;
+  }
+  #selection-modal .modal-reward-item-header div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #selection-modal .grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: [col1] 8% [col2] 70% [col3] 20%;
+        grid-template-columns: [col1] 8% [col2] 70% [col3] 20%;
+    -ms-grid-rows: [row1] 56px [row2] 100px;
+        grid-template-rows: [row1] 56px [row2] 100px;
+  }
+  #selection-modal .grid .radio {
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    -ms-grid-row: 1;
+        grid-row-start: 1;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  #selection-modal .grid .hide-for-mobile {
+    -ms-grid-column: 3;
+        grid-column-start: 3;
+    -ms-grid-row: 1;
+        grid-row-start: 1;
+    -ms-grid-column-align: right;
+        justify-self: right;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  #selection-modal .grid .modal-reward-item-header {
+    -ms-grid-column: 2;
+        grid-column-start: 2;
+    -ms-grid-row: 1;
+        grid-row-start: 1;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  #selection-modal .grid .modal-reward-text {
+    -ms-grid-column: 2;
+        grid-column-start: 2;
+    grid-column-end: 4;
+    -ms-grid-row: 2;
+        grid-row-start: 2;
+    line-height: 1.8rem;
   }
 }
 /*# sourceMappingURL=main.css.map */

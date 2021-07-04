@@ -51,6 +51,15 @@ main {
     background-color: rgb(250,250,250);
 }
 
+.bold {
+    font-weight: 700;
+    color: black;
+}
+
+.out-of-stock {
+    opacity: 0.5
+}
+
 .box {
     background-color: white;
     border: 1px solid rgb(246,241,238);
@@ -78,4 +87,10 @@ main {
     @include media-min("desktop") {
         display: none;
     }
+}
+
+.pledge {
+    color: $moderate-cyan;
+    font-weight: 500;
+    font-size: 0.95rem;
 }
