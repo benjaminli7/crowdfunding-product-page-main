@@ -12,6 +12,24 @@ const span_bookmark = document.getElementById("span-bookmark");
 const back_this_project_btn = document.getElementById("back-this-project-btn");
 const selection_modal = document.getElementById("selection-modal")
 const close_modal = document.getElementById("close-modal");
+const modal_items = document.querySelectorAll(".modal-reward-item");
+
+modal_items.forEach(function (modal_item, y) {
+    const pledge = document.querySelectorAll(".enter-your-pledge")
+    const btn = modal_item.querySelector("input[type='radio']")
+    btn.addEventListener("change", () => {
+        modal_items.forEach(function (item) {
+            if (item !==modal_item) {
+                item.classList.remove("cyanBorder");
+                pledge.forEach(pledge_item => {
+                    pledge_item.classList.add("hide")
+                })
+            }
+        })
+        modal_item.classList.toggle("cyanBorder");
+        modal_item.getElementsByClassName("enter-your-pledge")[0].classList.toggle("hide");
+    })
+})
 
 btn_bookmark.onclick = () => {
     if(img_bookmark.src.indexOf('bookmark.svg') !== -1) {

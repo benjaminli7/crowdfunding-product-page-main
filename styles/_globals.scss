@@ -60,6 +60,10 @@ main {
     opacity: 0.5
 }
 
+.cyanBorder {
+    border: 2px solid $moderate-cyan !important;
+}
+
 .box {
     background-color: white;
     border: 1px solid rgb(246,241,238);
@@ -75,6 +79,10 @@ main {
         width: 51%;
         padding: 45px 50px;
     }
+}
+
+.hide {
+    display: none;
 }
 
 .hide-for-mobile {
