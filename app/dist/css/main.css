@@ -111,6 +111,10 @@ main {
   font-size: 0.95rem;
 }
 
+.green-btn, #back-this-project-btn, #bookmark-btn, .select-reward-btn, .continue-btn, #close-modal {
+  cursor: pointer;
+}
+
 .green-btn {
   background-color: #3cb4ac;
   color: white;
@@ -187,6 +191,7 @@ main {
   border: 1px solid gainsboro;
   border-radius: 50%;
   background: #fff;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1023px) {
@@ -197,6 +202,13 @@ main {
 }
 
 @media screen and (min-width: 1024px) {
+  .radio-container input[type="radio"]:not(:checked) + label:before, .radio-container input[type="radio"]:checked + label:before {
+    top: 18px;
+    left: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
   .radio-container input[type="radio"]:not(:checked) + label:before, .radio-container input[type="radio"]:checked + label:before {
     top: 18px;
     left: 30px;
@@ -212,6 +224,7 @@ main {
   height: 12px;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1023px) {
@@ -222,6 +235,13 @@ main {
 }
 
 @media screen and (min-width: 1024px) {
+  .radio-container input[type="radio"]:not(:checked) + label:after, .radio-container input[type="radio"]:checked + label:after {
+    top: 24px;
+    left: 26px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
   .radio-container input[type="radio"]:not(:checked) + label:after, .radio-container input[type="radio"]:checked + label:after {
     top: 24px;
     left: 36px;
@@ -240,7 +260,7 @@ main {
           transform: scale(1);
 }
 
-.continue-btn {
+.continue-btn, .got-it-btn {
   border: 0;
   background-color: #3cb4ac;
   color: white;
@@ -392,6 +412,17 @@ main {
           align-items: center;
 }
 
+@media screen and (max-width: 1023px) {
+  #mastercraft-section .flex {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #mastercraft-section .flex #bookmark-btn {
+    margin-left: 15px;
+  }
+}
+
 #mastercraft-section h1 {
   padding-bottom: 15px;
 }
@@ -408,7 +439,7 @@ main {
     display: none;
   }
   #mastercraft-section #change-word:before {
-    content: 'beautifully handcrafted';
+    content: "beautifully handcrafted";
   }
 }
 
@@ -417,7 +448,7 @@ main {
     margin-top: -90px;
   }
   #mastercraft-section #change-word:before {
-    content: 'beautiful & handcrafted';
+    content: "beautiful & handcrafted";
   }
   #mastercraft-section h1 {
     font-size: 1.8rem;
@@ -671,8 +702,8 @@ main {
   }
   #selection-modal .modal-reward-item .enter-your-pledge .line {
     margin: 20px -20px;
-    border-top: 1px solid lightgray;
-    border-bottom: 1px solid lightgray;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
   }
   #selection-modal .modal-reward-item .enter-your-pledge .pledge-btns {
     display: -webkit-box;
@@ -685,6 +716,20 @@ main {
         -ms-flex-align: center;
             align-items: center;
   }
+}
+
+@media screen and (max-width: 1023px) and (max-width: 1023px) {
+  #selection-modal .modal-reward-item .enter-your-pledge .pledge-btns {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #selection-modal .modal-reward-item .enter-your-pledge .pledge-btns .continue-btn {
+    margin-left: 15px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
   #selection-modal .modal-content {
     width: 86.5%;
     margin: 120px auto;
@@ -740,7 +785,7 @@ main {
   }
   #selection-modal .grid {
     padding-top: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 30px;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: [col1] 13% [col2] 70% [col3] 15%;
@@ -748,6 +793,15 @@ main {
     -ms-grid-rows: [row1] 56px [row2] 100px;
         grid-template-rows: [row1] 56px [row2] 100px;
   }
+}
+
+@media screen and (min-width: 1024px) and (min-width: 1440px) {
+  #selection-modal .grid {
+    padding-bottom: 15px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
   #selection-modal .grid .radio {
     -ms-grid-column: 1;
         grid-column-start: 1;

@@ -1,3 +1,7 @@
+.green-btn, #back-this-project-btn, #bookmark-btn, .select-reward-btn, .continue-btn, #close-modal {
+    cursor: pointer;
+}
+
 .green-btn {
     background-color: $moderate-cyan;
     color: white;
@@ -62,6 +66,7 @@
         border: 1px solid rgb(220,220,220);
         border-radius: 50%;
         background: #fff;
+        cursor: pointer;
         @include media-max("desktop") {
             // mobile
             top: 0;
@@ -70,6 +75,11 @@
 
         @include media-min("desktop") {
             // desktop
+            top: 18px;
+            left: 20px; //value = 30px
+        }
+
+        @include media-min("widescreen") {
             top: 18px;
             left: 30px;
         }
@@ -82,6 +92,7 @@
         width: 12px;
         height: 12px;
         transition: all 0.4s ease;
+        cursor: pointer;
         @include media-max("desktop") {
             // mobile
             top: 6px;
@@ -89,6 +100,10 @@
         }
         @include media-min("desktop") {
             // desktop
+            top: 24px;
+            left: 26px;
+        }
+        @include media-min("widescreen") {
             top: 24px;
             left: 36px;
         }
@@ -104,7 +119,7 @@
     }
 }
 
-.continue-btn {
+.continue-btn, .got-it-btn {
     border: 0;
     background-color: $moderate-cyan;
     color: white;

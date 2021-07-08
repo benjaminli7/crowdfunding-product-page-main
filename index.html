@@ -15,12 +15,12 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
-<body>
+<body class="preload">
   <div id="hero">
     <div id="wrapper" class="overlay">
       <div id="nav-header">
         <div class="flex">
-          <img src="images/logo.svg" alt="logo"/>
+          <a href="#"><img src="images/logo.svg" alt="logo"/></a>
           <img id="hamburger" class="hide-for-desktop" src="images/icon-hamburger.svg" alt="icon-hamburger"/>
           <img id="close-menu" class="hide-for-mobile hide-for-desktop" src="images/icon-close-menu.svg" alt="icon-close-menu"/>
         </div>
@@ -80,7 +80,7 @@
           <p>You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.</p>
           <div class="flex">
             <p><span class="bold">101</span> left</p>
-            <a class="green-btn select-reward-btn" href="#">Select Reward</a>
+            <a class="green-btn select-reward-btn">Select Reward</a>
           </div>
         </div>
         <div class="reward-item item-available">
@@ -91,7 +91,7 @@
           <p>You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p>
           <div class="flex">
             <p><span class="bold">64</span> left</p>
-            <a class="green-btn select-reward-btn" href="#">Select Reward</a>
+            <a class="green-btn select-reward-btn">Select Reward</a>
           </div>
         </div>
         <div class="reward-item out-of-stock">
@@ -102,7 +102,7 @@
           <p>You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p>
           <div class="flex">
             <p><span class="bold">0</span> left</p>
-            <a class="out-of-stock-btn" href="#">Out of stock</a>
+            <a class="out-of-stock-btn">Out of stock</a>
           </div>
         </div>
       </div>
@@ -139,7 +139,7 @@
             </div>
           </div>
 
-          <div class="modal-reward-item">
+          <div id="bamboo-stand" class="modal-reward-item selectable">
             <div class="grid">
               <p class="hide-for-mobile"><span class="bold">101</span>left</p>
               <div class="radio-container">
@@ -169,7 +169,7 @@
             </div>
           </div>
 
-          <div class="modal-reward-item">
+          <div id="black-edition-stand" class="modal-reward-item selectable">
             <div class="grid">
               <p class="hide-for-mobile"><span class="bold">64</span>left</p>
               <div class="radio-container">
@@ -222,7 +222,7 @@
         <img src="images/icon-check.svg" alt="icon-check" />
         <h1>Thanks for your support!</h1>
         <p>Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign is completed.</p>
-        <button class="continue-btn">Got it!</button>
+        <button class="got-it-btn">Got it!</button>
       </div>
     </div>
 

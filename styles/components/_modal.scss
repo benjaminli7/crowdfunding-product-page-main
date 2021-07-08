@@ -92,13 +92,19 @@
                 }
                 .line {
                     margin: 20px -20px;
-                    border-top: 1px solid lightgray;
-                    border-bottom: 1px solid lightgray;
+                    border-top: 1px solid rgb(240, 240, 240);
+                    border-bottom: 1px solid rgb(240, 240, 240);
                 }
                 .pledge-btns {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+                    @include media-max("desktop") {
+                        justify-content: center;
+                        .continue-btn {
+                            margin-left: 15px;
+                        }
+                    }
                 }
             }
         }
@@ -157,7 +163,11 @@
         }
         .grid {
             padding-top: 15px;
-            padding-bottom: 15px;
+            padding-bottom: 30px;
+            @include media-min("widescreen") {
+                padding-bottom: 15px;
+            }
+
             display: grid;
             grid-template-columns: [col1] 13% [col2] 70% [col3] 15%;
             grid-template-rows: [row1] 56px [row2] 100px;
