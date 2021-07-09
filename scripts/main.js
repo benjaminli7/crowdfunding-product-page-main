@@ -20,6 +20,39 @@ const select_reward_btns = document.querySelectorAll(".select-reward-btn");
 const radiobtns = document.querySelectorAll("input[type='radio']");
 const selectable = document.getElementsByClassName("selectable");
 
+incrementProgress();
+
+function incrementMoney(value) {
+  let money_span = document.getElementById("money-span");
+  let money = parseInt(money_span.innerText.substring(1).replace(",", ""));
+  let total = money + parseInt(value);
+  let totalFormatted;
+  if (total >= 100000) {
+    total = "100000";
+    totalFormatted = total.slice(0, 3) + "," + total.slice(3);
+  } else {
+    total = total.toString();
+    totalFormatted = total.slice(0, 2) + "," + total.slice(2);
+  }
+  money_span.innerText = "$" + totalFormatted;
+}
+
+function incrementBackers() {
+  let backers_span = document.getElementById("backers-span");
+  let backers = parseInt(backers_span.innerText.replace(",", ""));
+  backers++;
+  backers = backers.toString();
+  let backersFormatted = backers.slice(0, 1) + "," + backers.slice(1);
+  backers_span.innerText = backersFormatted;
+}
+
+function incrementProgress() {
+  let money_span = document.getElementById("money-span");
+  let money = parseFloat(money_span.innerText.substring(1).replace(",", "."));
+  let progressbar = document.getElementById("progress");
+  progressbar.style.width = `${money}%`;
+}
+
 function toggleCyan(item) {
   item.classList.toggle("cyanBorder");
 }
@@ -74,6 +107,10 @@ got_it_btn.onclick = () => {
 
 continue_btns.forEach((btn) => {
   btn.addEventListener("click", () => {
+    let pledgeInput = document.querySelector(".pledge-input").value;
+    incrementMoney(pledgeInput);
+    incrementBackers();
+    incrementProgress();
     selection_modal.style.display = "none";
     modal_success[0].style.display = "block";
   });

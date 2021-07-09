@@ -1,130 +1,139 @@
-.green-btn, #back-this-project-btn, #bookmark-btn, .select-reward-btn, .continue-btn, #close-modal {
-    cursor: pointer;
+.green-btn,
+#back-this-project-btn,
+#bookmark-btn,
+.select-reward-btn,
+.continue-btn,
+#close-modal {
+  cursor: pointer;
 }
 
 .green-btn {
-    background-color: $moderate-cyan;
-    color: white;
-    border-radius:30px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    transition: background-color 0.4s ease-in-out;
-    &:hover {
-        background-color: $dark-cyan;
-    }
+  background-color: $moderate-cyan;
+  color: white;
+  border-radius: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: background-color 0.4s ease-in-out;
+  &:hover {
+    background-color: $dark-cyan;
+  }
 }
 
 #back-this-project-btn {
-    padding: 19px 40px;
+  padding: 19px 40px;
 }
 
 #bookmark-btn {
-    transition: opacity 0.4s ease-in-out;
-    @include media-min("desktop") {
-        display: flex;
-        align-items: center;
-        background-color:rgb(244,244,244);
-        border-radius: 30px;
-        span {
-            font-weight: 700;
-            padding: 20px 25px 20px 15px;
-            color: $dark-gray;
-        }
+  transition: opacity 0.4s ease-in-out;
+  @include media-min("desktop") {
+    display: flex;
+    align-items: center;
+    background-color: rgb(244, 244, 244);
+    border-radius: 30px;
+    span {
+      font-weight: 700;
+      padding: 20px 25px 20px 15px;
+      color: $dark-gray;
     }
-    &:hover {
-        opacity: 0.8;
-    }
+  }
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .select-reward-btn {
-    padding: 15px 30px;
-    font-size: 0.9rem;
+  padding: 15px 30px;
+  font-size: 0.9rem;
 }
 
 .out-of-stock-btn {
-    background-color: grey;
-    color: white;
-    border-radius:30px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    padding: 15px 40px;
-    font-size: 0.9rem;
+  background-color: grey;
+  color: white;
+  border-radius: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 15px 40px;
+  font-size: 0.9rem;
 }
 
 .radio-container {
-    input[type="radio"] {
-        display: none;
-    }
-    input[type="radio"]:checked + label, input[type="radio"]:not(:checked) + label {
-        position: relative;
-    }
-    input[type="radio"]:not(:checked) + label:before, input[type="radio"]:checked + label:before {
-        content: '';
-        position: absolute;
-        width: 22px;
-        height: 22px;
-        border: 1px solid rgb(220,220,220);
-        border-radius: 50%;
-        background: #fff;
-        cursor: pointer;
-        @include media-max("desktop") {
-            // mobile
-            top: 0;
-            left: 0;
-        }
-
-        @include media-min("desktop") {
-            // desktop
-            top: 18px;
-            left: 20px; //value = 30px
-        }
-
-        @include media-min("widescreen") {
-            top: 18px;
-            left: 30px;
-        }
-    }
-    input[type="radio"]:not(:checked) + label:after, input[type="radio"]:checked + label:after {
-        content: '';
-        position: absolute;
-        border-radius: 50%;
-        background: $moderate-cyan;
-        width: 12px;
-        height: 12px;
-        transition: all 0.4s ease;
-        cursor: pointer;
-        @include media-max("desktop") {
-            // mobile
-            top: 6px;
-            left: 6px;
-        }
-        @include media-min("desktop") {
-            // desktop
-            top: 24px;
-            left: 26px;
-        }
-        @include media-min("widescreen") {
-            top: 24px;
-            left: 36px;
-        }
+  input[type="radio"] {
+    display: none;
+  }
+  input[type="radio"]:checked + label,
+  input[type="radio"]:not(:checked) + label {
+    position: relative;
+  }
+  input[type="radio"]:not(:checked) + label:before,
+  input[type="radio"]:checked + label:before {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    @include media-max("desktop") {
+      // mobile
+      top: 0;
+      left: 0;
     }
 
-    input[type="radio"]:not(:checked) + label:after {
-        opacity: 0;
-        transform: scale(0)
+    @include media-min("desktop") {
+      // desktop
+      top: 18px;
+      left: 20px; //value = 30px
     }
-    input[type="radio"]:checked + label:after {
-        opacity: 1;
-        transform: scale(1)
+
+    @include media-min("widescreen") {
+      top: 18px;
+      left: 30px;
     }
+  }
+  input[type="radio"]:not(:checked) + label:after,
+  input[type="radio"]:checked + label:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: $moderate-cyan;
+    width: 12px;
+    height: 12px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    @include media-max("desktop") {
+      // mobile
+      top: 6px;
+      left: 6px;
+    }
+    @include media-min("desktop") {
+      // desktop
+      top: 24px;
+      left: 26px;
+    }
+    @include media-min("widescreen") {
+      top: 24px;
+      left: 36px;
+    }
+  }
+
+  input[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    transform: scale(0);
+  }
+  input[type="radio"]:checked + label:after {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-.continue-btn, .got-it-btn {
-    border: 0;
-    background-color: $moderate-cyan;
-    color: white;
-    font-weight: 500;
-    border-radius: 30px;
-    padding: 16px 30px;
-    font-family: $commissioner;
+.continue-btn,
+.got-it-btn {
+  border: 0;
+  background-color: $moderate-cyan;
+  color: white;
+  font-weight: 500;
+  border-radius: 30px;
+  padding: 16px 30px;
+  font-family: $commissioner;
 }
